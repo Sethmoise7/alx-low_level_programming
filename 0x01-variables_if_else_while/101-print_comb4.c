@@ -1,33 +1,41 @@
+#include <stdlib.h>
+#include <time.h>
+#include <stdio.h>
+
 /**
- * main - Prints all possible combinations of three different digits
- * in ascending order, separated by a comma followed by a space.
+ *main - Task 1 print the last digit of the number stored in the variable n
  *
- * Return: Always 0.
- */
+ *Return: 0
+ **/
+
 int main(void)
 {
-int digit1, digit2, digit3;
+int ch;
+int n;
+int m;
 
-for (digit1 = 0; digit1 < 8; digit1++)
+for (ch = 48; ch <= 57; ch++)
 {
-for (digit2 = digit1 + 1; digit2 < 9; digit2++)
+for (n = 49; n <= 57; n++)
 {
-for (digit3 = digit2 + 1; digit3 < 10; digit3++)
+for (m = 50; m <= 57; m++)
 {
-putchar((digit1 % 10) + '0');
-putchar((digit2 % 10) + '0');
-putchar((digit3 % 10) + '0');
-
-if (digit1 == 7 && digit2 == 8 && digit3 == 9)
-continue;
-
-putchar(',');
-putchar(' ');
+if (n > ch && m > n)
+{
+putchar(ch);
+putchar(n);
+putchar(m);
+if (ch != 55 || n != 56 || m != 57)
+{
+putchar(44);
+putchar(32);
 }
 }
 }
+}
+}
 
-putchar('\n');
+putchar(10);
 
 return (0);
 }
